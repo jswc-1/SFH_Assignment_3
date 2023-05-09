@@ -1,0 +1,137 @@
+
+/*Default settings*/
+* {
+    padding: 0;
+    border: 0;
+    margin: 0;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 100%;
+  }
+
+/*Header bar section*/
+  .header{
+    background: blue ;
+    height: 50px;
+    box-shadow: 20px 20px 50px 15px rgb(97, 97, 97);
+    overflow: hidden;
+    z-index: 5;
+  }
+
+  .header_text {
+    color: #ffffff;
+    margin: 0 auto 0 auto;
+    width: 300px;
+    text-align: center;
+    padding-top: 10px;
+  }
+
+  #img_menu {
+    height: 50px;
+    width: 50px;
+    float: left;
+    padding-left: 5px;
+    z-index: 5;
+  }
+
+  #img_logo {
+    height: 50px;
+    width: 50px;
+    float: right;
+    padding-right: 5px;
+  }
+
+  .menu_nav {
+    height: 100vh;
+    width: 30vw;
+    background-color: blue;
+    position: fixed;
+    left: -30vw;
+    margin-top: 18px;
+  }
+
+  .active{
+    left: 0vw;
+  }
+
+  .menu_nav li {
+    color: white;
+    padding-top: 10px;
+    padding-left: 10px;
+  }
+
+  .menu_nav li:hover{
+    background-color: antiquewhite;
+    color:black;
+  }
+
+  /*main content, img, text*/
+  .main_content {
+    height: 600px;
+    max-width: 1200px;
+    margin: 0 auto 0 auto;
+
+  }
+
+  #main_image{
+    width: auto;
+    height: 0;
+   /* max-height:100%; */
+    /*max-width:100%;*/
+    /*object-fit: contain;*/
+    padding-top: 56.25%;
+    z-index: -1;
+    position: relative;
+    max-width: 1200px;
+    display: block;
+    background: url("images/canoe.jpg");
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.main_image_text{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #ffffff;
+  font-size: 64px;
+  text-align: center;
+}
+
+/*Main Contain text*/
+.main_text {
+  padding-left: 15px;
+}
+
+.event {
+  padding-bottom: 10px;
+}
+
+.event_header h1 {
+  font-size: 36px;
+  padding-bottom: 30px;
+  
+}
+
+.event_location {
+color:darkgreen;
+text-decoration: underline;
+font-size: 28px;
+padding-bottom: 5px;
+}
+
+.event_desc {
+ padding-top: 10px;
+}
+
+/*Font size change when screen width < 800px */
+@media only screen and (max-width: 800px) {
+  .main_image_text{
+    font-size: 32px;
+  }
+
+  .event_header h1 {
+    font-size: 28px;
+    padding-bottom: 25px;
+  } 
+}
