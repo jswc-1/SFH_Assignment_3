@@ -1,3 +1,26 @@
+<?php
+    $data = array(
+        'heading' => $_POST['heading'],
+        'tripdate' => $_POST['tripdate'],
+        'duration' => $_POST['duration'],
+        'summary' => $_POST['summary']
+    );
+
+    //curl post
+    $ch = curl_init();
+    curl_setopt($ch, CURLOPT_URL, 'http://jswc.000webhostapp.com/api/event_create.php');
+    curl_setopt($ch, CURLOPT_POST, 1);
+    curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($data));
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+    
+    $response = curl_exec($ch);
+    $error_msg = curl_error($ch);
+    echo $error_msg;
+
+    $response = json_decode($response, true);
+    curl_close($ch);
+?>
+
 <html>
     <head>
         <link rel="stylesheet" href="main.css">
@@ -29,7 +52,10 @@
             </div>
 
             <div class="main_text">
-                <Div class="event_header"><h2><a href='admin-add.php'> Admin - Add Adventures </a></h2></Div>
+                <div>
+                    <h1><?=$response['message']?></h1>
+                </div>    
+
                 <Div class="event_header"><h2><a href='all-adventures.php'> View all Adventures</a></h2></Div>
             </div>
         </div>

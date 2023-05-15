@@ -1,3 +1,18 @@
+<?php
+    $ch = curl_init();
+
+    curl_setopt($ch, CURLOPT_URL, 'http://jswc.000webhostapp.com/api/event_read.php');
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+    curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'GET');
+
+    $response = curl_exec($ch);
+    $response = json_decode($response, true);
+    
+    curl_close($ch);
+
+    $events_arr = $response['data'];
+?>
+
 <html>
     <head>
         <link rel="stylesheet" href="main.css">
@@ -29,8 +44,16 @@
             </div>
 
             <div class="main_text">
-                <Div class="event_header"><h2><a href='admin-add.php'> Admin - Add Adventures </a></h2></Div>
-                <Div class="event_header"><h2><a href='all-adventures.php'> View all Adventures</a></h2></Div>
+                <Div class="event_header"><h1>Upcoming Adventures</h1></Div>
+
+                <?php foreach ($events_arr as $event) { ?>
+                    <Div class="event">
+                        <Div class="event_location"><?=$event['heading']?></Div>
+                        <Div class="event_date">Date: <?=$event['tripdate']?></Div>
+                        <Div class="event_date">Duration: <?=$event['duration']?> Days</Div>
+                        <Div class="event_desc"><h3>Summary</h3><?=$event['summary']?></Div>
+                    </Div>
+                <?php } ?>      
             </div>
         </div>
 

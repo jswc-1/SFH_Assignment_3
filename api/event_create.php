@@ -5,21 +5,21 @@
     header('Access-Control-Allow-Methods: POST');
     header('Access-Control-Allow-Headers: Access-Control-Allow-Headers, Content-Type, Access-Control-Allow-Methods, Authorization, X-Requested-With');
 
-    include_once '../core/initialize.php';
+    include_once 'initialize.php';
 
     //instantiate post
-    $post = new Post($db);
+    $event = new event($db);
 
     //get raw posted data
     $data = json_decode(file_get_contents("php://input"));
 
-    $post->title = $data->title;
-    $post->body = $data->body;
-    $post->author = $data->author;
-    $post->category_id = $data->category_id;
+    $event->heading = $data->heading;
+    $event->tripdate = $data->tripdate;
+    $event->duration = $data->duration;
+    $event->summary = $data->summary;
 
     //create post
-    if($post->create()){
+    if($event->create()){
         echo json_encode(
             array('message' => 'Event has added successfully to DB')
         );

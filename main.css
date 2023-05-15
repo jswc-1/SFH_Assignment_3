@@ -18,7 +18,7 @@
   }
 
   .header_text {
-    color: #ffffff;
+    color : white;
     margin: 0 auto 0 auto;
     width: 300px;
     text-align: center;
@@ -114,7 +114,7 @@
 }
 
 .event_location {
-color:darkgreen;
+color: darkgreen ;
 text-decoration: underline;
 font-size: 28px;
 padding-bottom: 5px;
@@ -124,7 +124,16 @@ padding-bottom: 5px;
  padding-top: 10px;
 }
 
-/*Font size change when screen width < 800px */
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 1em 0;
+  padding: 0;
+}
+
+
 @media only screen and (max-width: 800px) {
   .main_image_text{
     font-size: 32px;
@@ -135,3 +144,21 @@ padding-bottom: 5px;
     padding-bottom: 25px;
   } 
 }
+
+input[type=text], input[type=date], textarea{
+  padding:10px;
+  border:1;
+  box-shadow:0 0 15px 4px rgba(0,0,0,0.06);
+}
+
+input[type=submit], input[type=reset]{
+  padding:10px;
+  border:1;
+  background-color: rgb(85, 72, 204);
+  color: rgb(246, 244, 248);
+ }
+
+input[type=submit]:hover, input[type=reset]:hover{
+  background-color: cadetblue;
+  color: rgb(246, 244, 248);
+ }
