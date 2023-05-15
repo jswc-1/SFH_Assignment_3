@@ -55,7 +55,7 @@
                 <div>
                     <h1><?=$response['message']?></h1>
                 </div>    
-
+                <Div class="event_header"><h2><a href='admin-add.php'> Admin - Add more Adventures </a></h2></Div>
                 <Div class="event_header"><h2><a href='all-adventures.php'> View all Adventures</a></h2></Div>
             </div>
         </div>
