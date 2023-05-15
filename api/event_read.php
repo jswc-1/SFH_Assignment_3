@@ -2,8 +2,9 @@
     //headers
     header('Access-Control-Allow-Origin: *');
     header('Content-Type: application/json');
+    header('Access-Control-Allow-Methods: GET');
 
-    include_once '../core/initialize.php';
+    include_once 'initialize.php';
 
     //instantiate event
     $event = new event($db);
@@ -43,4 +44,6 @@
             array('message' => 'No Event Found')
         );
     }
+
+    
 ?>

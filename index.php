@@ -1,7 +1,6 @@
 <?php
     $ch = curl_init();
 
-   // curl_setopt($ch, CURLOPT_URL, 'https://localhost/api/events/read.php');
     curl_setopt($ch, CURLOPT_URL, 'http://localhost/api/event_read.php');
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
     curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'GET');
@@ -12,6 +11,7 @@
     curl_close($ch);
 
     $events = $response['data'];
+    
 ?>
 
 <html>
@@ -22,6 +22,7 @@
     </head>
     
     <body>
+
         <!--Header section-->
         <Div class="header">
             <div><img id="img_logo" src="images/paddle-white.png"></div>
@@ -54,7 +55,6 @@
                         <Div class="event_date">Duration: <?=$event['duration']?> Days</Div>
                         <Div class="event_desc"><h3>Summary</h3><?=$event['summary']?></Div>
                     </Div>
-
                 <?php } ?>      
             </div>
         </div>

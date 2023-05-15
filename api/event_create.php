@@ -21,11 +21,11 @@
     //create post
     if($post->create()){
         echo json_encode(
-            array('message' => 'Post Created')
+            array('message' => 'Event has added successfully to DB')
         );
     } else {
         echo json_encode(
-            array('message' => 'Post Not Created')
+            array('message' => 'Event Cannot be Created!')
         );
     }
 
