@@ -16,7 +16,7 @@
 
     //check if any event
     if($num > 0){
-        //post array
+        //event array
         $event_arr = array();
         $event_arr['data'] = array();
 

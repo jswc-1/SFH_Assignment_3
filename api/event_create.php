@@ -7,7 +7,7 @@
 
     include_once 'initialize.php';
 
-    //instantiate post
+    //instantiate event
     $event = new event($db);
 
     //get raw posted data
@@ -18,8 +18,7 @@
     $event->duration = $data->duration;
     $event->summary = $data->summary;
 
-    //create post
-    if($event->create()){
+    //create event
         echo json_encode(
             array('message' => 'Event has added successfully to DB')
         );
